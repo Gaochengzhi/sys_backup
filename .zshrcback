@@ -1,0 +1,86 @@
+
+         #_              _                _    
+ #_______| |__  _ __ ___| |__   __ _  ___| | __
+#|_  / __| '_ \| '__/ __| '_ \ / _` |/ __| |/ /
+ #/ /\__ \ | | | | | (__| |_) | (_| | (__|   < 
+#/___|___/_| |_|_|  \___|_.__/ \__,_|\___|_|\_\
+                                              
+
+alias re='ranger'
+alias zp='vim -p ~/.zshrc ~/sys_backup/.zshrcback'
+alias ep='e ~/.emacs'
+alias vp='vim -p ~/.vimrc  ~/.vim/vimrc/*'
+alias tp='vim ~/.tmux.conf'
+alias de='cd ~/Desktop'
+alias dl='cd ~/Downloads'
+alias mc='cd ~/mycode'
+alias ll="ls -lh"
+
+# Git Realted
+alias grh="git reset --hard"
+alias gl="git log"
+alias gs="git status"
+alias gc="git commit -am"
+alias gcl="git clone"
+alias gp="git push -u origin master"
+alias nogit="find . -name ".git" | xargs rm -Rf"
+alias cleangit="git checkout --orphan latest_branch; git add -A; git commit -am \"commit message\";git branch -D master; git branch -m master; git push -f origin master;rm -rf .git/refs/original/;git reflog expire --expire=now --all;git fsck --full --unreachable;git repack -A -d;git gc --aggressive --prune=now;git push --force origin master"
+
+# Quickly shell 
+alias v="vim"
+alias vu="vim -u ~/mycode/.vimrc"
+alias diff="icdiff"
+
+alias e="emacs"
+alias o="open ."
+alias c="code"
+alias C="code ."
+alias sz="du -sh"
+alias t="touch"
+alias mk="mkdir"
+alias s="source"
+alias n="neofetch"
+# brew or your package manager
+alias b="brew"
+alias bi="brew install"
+alias bu="brew uninstall"
+# python3
+alias p3="python3"
+# tmux
+alias tt="tmux"
+alias tta="tmux a -t"
+alias ttnew="tmux new -s"
+# go
+alias cdg='cd ~/go'
+# backup
+alias backpush='sh ~/sys_backup/syspush.sh'
+alias backpull='sh ~/sys_backup/syspull.sh'
+# Clean log
+alias cleanlog="cd /private/var/log/asl/;sudo rm -rf *.asl;cd"
+#ali
+alias ali='ssh kounarushi@124.220.179.145'
+#commnet short cut
+alias kill='pkill -f'
+# latex
+alias rmd="echo '''\\\usepackage{ctex} 
+''' > header.tex"
+
+# ncdu && tldr
+alias h='tldr'
+alias cl='ncdu'
+alias txt='iconv -f gbk -t utf8 ~/Desktop/*.txt > ~/Desktop/gubaren.txt'
+#
+#
+# fzf 
+vf(){
+    vim -p $(fzf)
+}
+of(){
+    open $(fzf)
+}
+cdf(){
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
