@@ -1,15 +1,9 @@
 
 echo '
-#######################################
-#                                     #
 #   star to load config to your sys!  #
-#                                     #
-#                                     #
-#          by Gao Chengzhi            #
-#    Sun Nov  1 23:21:06 CST 2020     #
-#                                     #
-#######################################
+=======================================
 '
+printf "%-${linewidth}s |\n"
 
 # Homebrew for Mac
 if [ $1 == 'brew' ]; then

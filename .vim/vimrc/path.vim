@@ -9,7 +9,6 @@
 "C language
 set path+=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
 set path+=/usr/local/Cellar/llvm/11.0.0/include/c++/v1
-set path+=/Users/kounarushi/Desktop/paper/build_Lachesis/libaray
 
 
 

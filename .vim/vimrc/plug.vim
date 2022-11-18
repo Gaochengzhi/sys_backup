@@ -8,7 +8,6 @@ let g:header_field_author = 'Gao Chengzhi'
 let g:header_field_author_email = '2673730435@qq.com'
 let g:header_auto_update_header = 1
 let g:header_field_license_id = 'The MIT License (MIT)'
-map <leader>na :AddHeader<CR>
 
 
 
@@ -70,24 +69,27 @@ nnoremap <leader>ls :LeetCodeSubmit<cr>
 nnoremap <leader>li :LeetCodeSignIn<cr>
 let g:leetcode_china = 1
 let g:leetcode_browser = 'chrome'
+" Pandoc Syntax
+augroup pandoc_syntax
+    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup END
 
 "vim-tmux-navigator
 call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'chiel92/vim-autoformat'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'skywind3000/asyncrun.vim'
 Plug 'gcmt/wildfire.vim'
 Plug 'maxmellon/vim-jsx-pretty'
-"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'francoiscabrol/ranger.vim'
 Plug 'yggdroot/leaderf', { 'do': ':leaderfinstallcextension' }
 Plug 'preservim/nerdcommenter'
 Plug 'alpertuna/vim-header'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
 Plug 'mbledkowski/neuleetcode.vim'
-Plug 'cormacrelf/vim-colors-github'
 Plug 'jaywilliams/vim-vwilight'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'Gaochengzhi/vimColorSelector'
 call plug#end()
 

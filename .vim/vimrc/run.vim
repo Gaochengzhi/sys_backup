@@ -28,12 +28,13 @@ func! CompileRunGcc()
     :term export DEBUG="INFO,ERROR,WARNING" node --trace-warnings .
   elseif &filetype == 'scheme'
     :term guile --no-auto-compile %
+  elseif &filetype == 'vim'
+    :so %
   elseif &filetype == 'go'
     :term go run .
   elseif &filetype == 'markdown' 
-    "exec \"MarkdownPreview"
-    :MarkdownPreviewToggle
+    :! open %
   else
-    :term lac % 
+    :echom "Unsupported filetype!"
 endif
 endfunc

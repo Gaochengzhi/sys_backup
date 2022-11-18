@@ -8,9 +8,10 @@
 
 alias re='ranger'
 alias zp='vim -p ~/.zshrc ~/sys_backup/.zshrcback'
+alias ss="source"
 alias ep='e ~/.emacs'
-alias vp='vim -p ~/.vimrc  ~/.vim/vimrc/*'
-alias tp='vim ~/.tmux.conf'
+alias vp='cd ~/.config/nvim&&vim init.lua'
+alias tp='vim ~/sys_backup/.tmux.conf'
 alias de='cd ~/Desktop'
 alias dl='cd ~/Downloads'
 alias mc='cd ~/mycode'
@@ -45,11 +46,12 @@ alias b="brew"
 alias bi="brew install"
 alias bu="brew uninstall"
 # python3
-alias p3="python3"
+alias py="python3"
 # tmux
 alias tt="tmux"
 alias tta="tmux a -t"
 alias ttnew="tmux new -s"
+
 # go
 alias cdg='cd ~/go'
 # backup
@@ -59,6 +61,7 @@ alias backpull='sh ~/sys_backup/syspull.sh'
 alias cleanlog="cd /private/var/log/asl/;sudo rm -rf *.asl;cd"
 #ali
 alias ali='ssh kounarushi@124.220.179.145'
+alias myt='ssh gaochengzhi@192.168.10.106'
 #commnet short cut
 alias kill='pkill -f'
 # latex
@@ -67,7 +70,7 @@ alias rmd="echo '''\\\usepackage{ctex}
 
 # ncdu && tldr
 alias h='tldr'
-alias cl='ncdu'
+alias cl='ncdu --color off'
 alias txt='iconv -f gbk -t utf8 ~/Desktop/*.txt > ~/Desktop/gubaren.txt'
 #
 #
@@ -84,3 +87,4 @@ cdf(){
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+
