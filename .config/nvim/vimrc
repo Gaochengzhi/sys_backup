@@ -1,0 +1,54 @@
+augroup vertical_help
+autocmd!
+autocmd FileType help wincmd H
+augroup END
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+function! s:ZoomToggle() abort
+    if exists('t:zoomed') && t:zoomed
+        execute t:zoom_winrestcmd
+        let t:zoomed = 0
+    else
+        let t:zoom_winrestcmd = winrestcmd()
+        resize
+        vertical resize
+        let t:zoomed = 1
+    endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <silent> <C-W>z :ZoomToggle<CR>
+
+
+noremap , :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+  exec "w"
+  if &filetype == 'c'
+    :AsyncRun gcc % -o %< ; ./%< ; rm -rf ./%< 
+  elseif &filetype == 'cpp'
+    :AsyncRun g++ % -std=c++2a  -o %< ; ./%< ; rm -rf ./%< 
+  elseif &filetype == 'java'
+    :AsyncRun javac % ; time java %<
+  elseif &filetype == 'sh'
+    :term sh %
+  elseif &filetype == 'python'
+    :term  python3 %
+  elseif &filetype == 'r'
+    :term  Rscript %
+  elseif &filetype == 'html'
+    silent! exec ":AsyncRun " google-chrome-stable " % &"
+  elseif &filetype == 'tex'
+    silent! exec "VimtexStop"
+    silent! exec "VimtexCompile"
+  elseif &filetype == 'javascript'
+    :term export DEBUG="INFO,ERROR,WARNING" node --trace-warnings .
+  elseif &filetype == 'scheme'
+    :term guile --no-auto-compile %
+  elseif &filetype == 'vim'
+    :so %
+  elseif &filetype == 'go'
+    :term go run .
+  elseif &filetype == 'markdown' 
+    :! open %
+  else
+    :echom "Unsupported filetype!"
+endif
+endfunc
