@@ -10,12 +10,10 @@ echo '
 #######################################
 '
 cd ~/sys_backup 
-cp -f ~/.vimrc ~/sys_backup           
 cp -Rf ~/.config/ranger ~/sys_backup/.config/
 cp -Rf ~/.config/nvim ~/sys_backup/.config/
-cp -Rf ~/.vim/vimrc ~/sys_backup/.vim/
 git add -A    
-git commit -am "Push Settings" 
+git commit -am "Push Settings"`date -u +%Y-%m-%d`
 git push https://github.com/Gaochengzhi/sys_backup.git/    
 
 
