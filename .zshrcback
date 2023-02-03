@@ -11,7 +11,7 @@ alias zp='vim -p ~/.zshrc ~/sys_backup/.zshrcback'
 alias ss="source"
 alias ep='e ~/.emacs'
 alias vp='cd ~/.config/nvim&&vim init.lua'
-alias tp='vim ~/sys_backup/.tmux.conf'
+alias tp='vim ~/sys_backup/.tmux.confback'
 alias de='cd ~/Desktop'
 alias dl='cd ~/Downloads'
 alias mc='cd ~/mycode'
@@ -61,6 +61,7 @@ alias backpull='sh ~/sys_backup/syspull.sh'
 alias cleanlog="cd /private/var/log/asl/;sudo rm -rf *.asl;cd"
 #ali
 alias ali='ssh kounarushi@124.220.179.145'
+alias ten='ssh ubuntu@1.13.17.245'
 alias myt='ssh gaochengzhi@192.168.10.106'
 #commnet short cut
 alias kill='pkill -f'

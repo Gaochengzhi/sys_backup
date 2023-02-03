@@ -1,4 +1,3 @@
-
 echo '
 #   star to load config to your sys!  #
 =======================================
