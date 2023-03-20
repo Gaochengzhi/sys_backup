@@ -61,8 +61,9 @@ alias backpull='sh ~/sys_backup/syspull.sh'
 alias cleanlog="cd /private/var/log/asl/;sudo rm -rf *.asl;cd"
 #ali
 alias ali='ssh kounarushi@124.220.179.145'
-alias ten='ssh ubuntu@1.13.17.245'
+alias ten='ssh ubuntu@1.13.197.36'
 alias myt='ssh gaochengzhi@192.168.10.106'
+alias ujs='ssh -p 6000 ujs@124.220.179.145'
 #commnet short cut
 alias kill='pkill -f'
 # latex
@@ -89,3 +90,4 @@ cdf(){
   cd "$dir"
 }
 
+export HOMEBREW_NO_AUTO_UPDATE=1
