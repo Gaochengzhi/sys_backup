@@ -22,7 +22,7 @@ alias grh="git reset --hard"
 alias gl="git log"
 alias gs="git status"
 alias gcm="git commit -am"
-alias gc="git clone"
+alias gc="git clone --depth 1"
 alias gp="git push -u origin master"
 alias nogit="find . -name ".git" | xargs rm -Rf"
 alias cleangit="git checkout --orphan latest_branch; git add -A; git commit -am \"commit message\";git branch -D master; git branch -m master; git push -f origin master;rm -rf .git/refs/original/;git reflog expire --expire=now --all;git fsck --full --unreachable;git repack -A -d;git gc --aggressive --prune=now;git push --force origin master"
@@ -30,7 +30,6 @@ alias cleangit="git checkout --orphan latest_branch; git add -A; git commit -am 
 # Quickly shell 
 alias v="vim"
 alias vu="vim -u ~/mycode/.vimrc"
-alias diff="icdiff"
 
 alias e="emacs"
 alias o="open ."
@@ -47,6 +46,7 @@ alias bi="brew install"
 alias bu="brew uninstall"
 # python3
 alias py="python3"
+alias python="python3"
 # tmux
 alias tt="tmux"
 alias tta="tmux a -t"
@@ -57,13 +57,16 @@ alias cdg='cd ~/go'
 # backup
 alias backpush='sh ~/sys_backup/syspush.sh'
 alias backpull='sh ~/sys_backup/syspull.sh'
+alias ggl='ssh -p 9012 ubuntu@104.199.162.36'
 # Clean log
 alias cleanlog="cd /private/var/log/asl/;sudo rm -rf *.asl;cd"
 #ali
-alias ali='ssh kounarushi@124.220.179.145'
-alias ten='ssh ubuntu@1.13.197.36'
+alias ali='ssh kounarushi@74.48.115.131 -p 22'
+alias ten='ssh ubuntu@1.13.14.243'
 alias myt='ssh gaochengzhi@192.168.10.106'
-alias ujs='ssh -p 6000 ujs@124.220.179.145'
+alias ujs='ssh -p 6000 ujs@104.199.162.36'
+alias con='ssh -p 22 ubuntu@49.234.28.191'
+alias lo='ssh -X ujs@192.168.31.154'
 #commnet short cut
 alias kill='pkill -f'
 # latex
@@ -91,3 +94,4 @@ cdf(){
 }
 
 export HOMEBREW_NO_AUTO_UPDATE=1
+

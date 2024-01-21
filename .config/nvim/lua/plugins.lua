@@ -18,6 +18,12 @@ packer.startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    use {
+        'glacambre/firenvim',
+        run = function() vim.fn['firenvim#install'](0) end
+    }
+
+    use 'MetriC-DT/balance-theme.nvim'
     use 'onsails/lspkind-nvim'
     use "hrsh7th/cmp-path"
     use 'hrsh7th/cmp-nvim-lsp'
@@ -27,6 +33,10 @@ packer.startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
     use({ "L3MON4D3/LuaSnip",
         tag = "v<CurrentMajor>.*" })
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
     use 'windwp/nvim-autopairs'
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',

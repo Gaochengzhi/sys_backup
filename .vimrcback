@@ -151,8 +151,8 @@ function! s:ZoomToggle() abort
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <C-W>z :ZoomToggle<CR>
-# source $HOME/.vim/vimrc/plug.vim
-# source $HOME/.vim/vimrc/theme.vim
-# source $HOME/.vim/vimrc/coc.vim
-# source $HOME/.vim/vimrc/run.vim
-# source $HOME/.vim/vimrc/path.vim
+"source $HOME/.vim/vimrc/plug.vim
+"source $HOME/.vim/vimrc/theme.vim
+"source $HOME/.vim/vimrc/coc.vim
+"source $HOME/.vim/vimrc/run.vim
+"source $HOME/.vim/vimrc/path.vim
